@@ -34,18 +34,24 @@ class Drummer(Musician):
         
     def combust(self):
         print("Drummer has spontaneously combusted!")
-        # How to delete instance here? or is unnecessary? 
 
-# Add Band class
-# Bands should be able to:
-# - hire and fire Musicians
-# - have them play solos after drummer has counted time.
-class Band():
+class Band:
     def hire(self):
-        Tim = Bassist()
-        Jack = Guitarist()
-        Bob = Drummer()
-        # Why don't the variables link to classes? 
-
-play = Band()
-play.hire()
+        self.Tim = Bassist()
+        self.Jack = Guitarist()
+        self.Bob = Drummer()
+# I attempted to use input() to get names of band members to use in play_solos but was unable to get it functional.
+        
+    def fire(self):
+        print("We need new band members, you're all fired!")
+# No need to do anything more, correct?
+        
+    def play_solos(self):
+        self.Bob.count()
+        self.Tim.solo(7)
+        self.Jack.solo(10)
+        self.Bob.solo(8)
+        
+gig = Band()
+gig.hire()
+gig.play_solos()
